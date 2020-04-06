@@ -5,6 +5,15 @@ const getShopKey = (origin, host) => {
   if (!origin && host.indexOf('localhost') !== -1) {
     shop = process.env.TEST_SHOP;
   }
+  let shopValue = shop
+    .replace('http://', '')
+    .replace('https://', '')
+    .replace('www.', '')
+    .replace('.com', '')
+    .replace('.co', '')
+    .replace('.myshopify', '')
+    .toUpperCase();
+  console.log('shopp', shopValue);
   return (shop = shop
     .replace('http://', '')
     .replace('https://', '')
