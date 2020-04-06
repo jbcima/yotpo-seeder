@@ -2,8 +2,10 @@ const ApplicationError = require.main.require('./classes/ApplicationError');
 
 const getShopKey = (origin, host) => {
   let shop = origin.toString();
+  console.log('origin', origin);
   if (!origin && host.indexOf('localhost') !== -1) {
     shop = process.env.TEST_SHOP;
+    console.log('no origin, returning testshop');
   }
   let shopValue = shop
     .replace('http://', '')
