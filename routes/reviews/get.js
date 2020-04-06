@@ -13,7 +13,7 @@ reviews.get('/:id?', (req, res, next) => {
   console.log(
     `-\nREQUEST - GET /reviews/:id - ${new Date().toLocaleDateString()}`
   );
-  console.log('req headers', req.headers);
+  // console.log('req headers', req.headers);
   const { origin = false, host = false } = req.headers;
   if (!origin && host.indexOf('localhost') === -1) {
     throw new ApplicationError('Missing request origin', 400);

@@ -1,24 +1,15 @@
 const ApplicationError = require.main.require('./classes/ApplicationError');
 
 const getShopKey = (origin, host) => {
-  console.log('ORIGINN', origin);
-  console.log('HOSTT', host);
+  // console.log('ORIGINN', origin);
+  // console.log('HOSTT', host);
   let shop = origin.toString();
-  console.log('origin', origin);
-  console.log('shop', shop);
+  // console.log('origin', origin);
+  // console.log('shop', shop);
   if (!origin && host.indexOf('localhost') !== -1) {
     shop = process.env.TEST_SHOP;
     console.log('no origin, returning testshop');
   }
-  let shopValue = shop
-    .replace('http://', '')
-    .replace('https://', '')
-    .replace('www.', '')
-    .replace('.com', '')
-    .replace('.co', '')
-    .replace('.myshopify', '')
-    .toUpperCase();
-  console.log('shopp', shopValue);
   return (shop = shop
     .replace('http://', '')
     .replace('https://', '')
